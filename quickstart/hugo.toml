@@ -1,3 +1,4 @@
 baseURL = 'https://jamiebarrow.dev/'
 languageCode = 'en-us'
 title = 'jamiebarrow.dev'
+theme = 'ananke'
