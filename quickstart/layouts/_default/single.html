@@ -1,0 +1,30 @@
+{{- define "title" -}}
+{{- .Date | time.Format "2006-01-02" -}} - {{- .Title -}} - {{- .Site.Title -}}
+{{- end -}}
+{{- define "main" -}}
+<section class="blog-post">
+    <div class="blog-post-article-container">
+        <article id="" class="blog-post-article">
+            <header class="blog-post-article-header">
+                <h2 class="blog-post-article-header-title">
+                    {{- .Title -}}
+                </h2>
+                <h3 class="blog-post-article-header-date">
+                    {{- .Date | time.Format "2006-01-02" -}}
+                </h3>
+            </header>
+            <div class="blog-post-content">
+            {{- .Content -}}
+            </div>
+            <footer class="blog-post-article-footer">
+                <div class="blog-post-tags">
+                    <div class="blog-post-tags-label">Tags</div>
+                    {{- range .Params.Tags -}}
+                    <div class="blog-post-tags-item" key="{{- . -}}">{{- . -}}</div>
+                    {{- end -}}
+                </div>
+            </footer>
+        </article>
+    </div>
+</section>
+{{- end -}}
